@@ -1,0 +1,203 @@
+/* CSS Variables for Theming */
+:root {
+  --primary-color: rgba(144, 135, 135, 0.749); /* Transparent deep brown */
+  --secondary-color: rgba(153, 157, 146, 0.858); /* Transparent olive green */
+  --text-color: #e8e800; /* Creamy white */
+  --glow-color: rgba(218, 165, 32, 0.926); /* Golden glow */
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)), 
+              url('https://images.unsplash.com/photo-1506368249636-83f805d374c0') no-repeat center center/cover;
+  background-blend-mode: darken; /* Emphasizes the wooden texture */
+  padding: 15px 20px;
+  box-shadow: 0 6px 16px var(--shadow-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  backdrop-filter: blur(8px); /* Glassmorphism effect */
+}
+
+/* Logo styling */
+.navbar .logo h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--text-color), #daa520); /* Creamy white to gold */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  letter-spacing: 1.5px;
+}
+
+.navbar .logo .logo-animate {
+  animation: bounce 1s ease-in-out;
+}
+
+/* Bounce animation for logo */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Hamburger icon */
+.navbar .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.navbar .menu-toggle .bar {
+  width: 32px;
+  height: 5px;
+  background-color: var(--text-color);
+  border-radius: 6px;
+  transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+}
+
+.navbar .menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+  background-color: #daa520; /* Gold */
+}
+
+.navbar .menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+  background-color: #daa520;
+}
+
+/* Navigation links */
+.navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-left: 25px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.navbar li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.15);
+  box-shadow: 0 0 15px var(--glow-color); /* Golden neon glow */
+}
+
+.navbar li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #daa520;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar li a:active {
+  transform: scale(0.9);
+}
+
+/* Mobile menu */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links.active {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)), 
+              url('https://images.unsplash.com/photo-1506368249636-83f805d374c0') no-repeat center center/cover;
+  background-blend-mode: darken;
+  padding: 25px;
+  text-align: center;
+  animation: slideIn 0.4s ease-in-out;
+  box-shadow: 0 6px 16px var(--shadow-color);
+  backdrop-filter: blur(8px);
+}
+
+.nav-links li {
+  margin: 10px 0;
+}
+
+.nav-links li a {
+  display: block;
+  padding: 15px;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+/* Slide-in animation for mobile menu */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+
+  .navbar .logo h2 {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    padding: 12px 15px;
+  }
+}

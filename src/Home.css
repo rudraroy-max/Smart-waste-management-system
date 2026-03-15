@@ -1,0 +1,118 @@
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #3f3227d8 0%, #33180bdd 50%, #714626db 100%), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-blend-mode: overlay;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.982), 0 4px 8px rgba(0, 0, 0, 0.949);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-content:hover {
+  transform: translateY(-25px);
+  box-shadow: 0 12px 24px rgba(5, 4, 4, 0.738), 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-align: center;
+  background: none;
+  transition: color 0.3s ease;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-align: center;
+  background: none;
+  transition: color 0.3s ease;
+}
+.hero-buttons .btn {
+  background: #c5efcf;
+  color: rgb(14, 12, 12);
+  padding: 10px 25px;
+  border: none;
+  text-decoration: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  background: #218838;
+}
+
+.btn.secondary {
+  background: #c9d1da;
+}
+
+.btn.secondary:hover {
+  background: #0056b3;
+}
+
+.features {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.footer {
+  padding: 20px;
+  background: #150e0e;
+  color: white;
+  text-align: center;
+}
